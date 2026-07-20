@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포스코 회사 소개 | 지속가능한 미래를 만드는 글로벌 철강 기업</title>
+  <meta name="description" content="포스코의 기업 비전, 주요 사업, 친환경 철강 기술, 이차전지 소재, ESG 경영과 글로벌 네트워크를 소개합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --posco-blue: #004b91;
+      --deep-navy: #002f56;
+      --cyan: #00a99d;
+      --surface: #f6faff;
+      --surface-alt: #f0f4fa;
+      --text: #171c20;
+      --muted: #424751;
+      --line: #c2c6d2;
+      --white: #ffffff;
+      --shadow: 0 18px 42px rgba(0, 47, 86, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans KR", Arial, sans-serif;
+      color: var(--text);
+      background: var(--surface);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      width: 100%;
+      height: 72px;
+      background: rgba(246, 250, 255, 0.92);
+      border-bottom: 1px solid rgba(194, 198, 210, 0.55);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .logo {
+      width: 112px;
+      height: 36px;
+      object-fit: contain;
+      object-position: center;
+      mix-blend-mode: multiply;
+    }
+
+    .menu {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .menu a {
+      padding: 24px 0 20px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--posco-blue);
+      border-bottom-color: var(--posco-blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      color: var(--posco-blue);
+      background: transparent;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--line);
+      background: var(--white);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--deep-navy);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 35, 67, 0.82) 0%, rgba(0, 47, 86, 0.48) 44%, rgba(0, 0, 0, 0.14) 100%),
+        url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNVZABHMuM9lctG8MfKNco7JPRz1NSYM0-QEcrY7X5rqmpw9RaD-od9fQMsfYgxBDFfSmq5tRzQOYEVinpd-o2tJikSDcZeUee3mNew0NNq_mzXXMrGLz0gNHt3noUzDjQzp0r4K58nvVX3TxcQmNDPjSLVr_ite0ToZX1bUYplK5p4DRNehXUI8SC7mkVxL11wEiMgDkBpIJK2PiPTR2n75_ZnENmMudtUOce6sYAfwZ_HkcdkPhSvtLLII5X-YE2tqtbmMjLMFSh") center / cover;
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding-top: 72px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin-bottom: 34px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 19px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      color: var(--white);
+      background: var(--posco-blue);
+    }
+
+    .btn.primary:hover {
+      background: var(--deep-navy);
+    }
+
+    .btn.secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.68);
+    }
+
+    .btn.secondary:hover {
+      color: var(--posco-blue);
+      background: var(--white);
+    }
+
+    section {
+      padding: 104px 0;
+    }
+
+    .section-alt {
+      background: var(--surface-alt);
+    }
+
+    .section-dark {
+      color: var(--white);
+      background: var(--deep-navy);
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 46px;
+    }
+
+    .center {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .section-dark .lead {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+      gap: 44px;
+      align-items: start;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .stat,
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .stat {
+      min-height: 156px;
+      padding: 26px;
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--posco-blue);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .business-card {
+      position: relative;
+      min-height: 380px;
+      overflow: hidden;
+      border-radius: 6px;
+      color: var(--white);
+      background: var(--deep-navy);
+    }
+
+    .business-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .business-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .business-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 47, 86, 0.08), rgba(0, 47, 86, 0.88));
+    }
+
+    .business-body {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      padding: 24px;
+    }
+
+    .business-body h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .business-body p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 14px;
+    }
+
+    .green-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .flow {
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 0 0 28px 32px;
+      border-left: 1px solid rgba(0, 169, 157, 0.45);
+    }
+
+    .flow-step:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .flow-step::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 18px var(--cyan);
+    }
+
+    .flow-step b {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 10px;
+      color: var(--deep-navy);
+      background: var(--white);
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .esg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 32px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      border-top-color: var(--cyan);
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--deep-navy);
+      font-size: 24px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .network-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.4fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .region {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-weight: 700;
+    }
+
+    .region strong {
+      color: var(--posco-blue);
+    }
+
+    .map {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--white);
+    }
+
+    .map img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .pin {
+      position: absolute;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .pin.kr {
+      top: 35%;
+      left: 70%;
+    }
+
+    .pin.us {
+      top: 46%;
+      left: 19%;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 22px;
+      margin-top: 26px;
+    }
+
+    .milestone {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .year {
+      color: var(--posco-blue);
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .milestone h3 {
+      margin-bottom: 8px;
+      font-size: 23px;
+    }
+
+    .milestone p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      text-align: center;
+      background: var(--posco-blue);
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0, 75, 145, 0.9), rgba(0, 75, 145, 0.9)),
+        url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSOgsC2ZDUbhA_4Fr4p6X-oDYJzum8LZbQFzdiAHTlGu0rXotSdqK2E16jmJsvq7WUN20CCcic3pSdMKEjpFgnaP9qkzXXZkKHhGRXF6GIJlL3Edlw0QlmBWJg0rj6VCzjTxqacyjQNCiWC5JeT7iJKYLmQqu4R610nD9sAGXdSsQq_UrgcbaJDoI2pf-8t-mJdJ2hf-HHylyHTpYjf3kWacy726Uf14R2SBBhi_MvFU3XzeWarBRDs2vwJ9gmYKoQG6vy4DNzqQPf") center / cover;
+    }
+
+    .cta .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer {
+      padding: 48px 0;
+      color: var(--muted);
+      background: var(--white);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .menu {
+        display: none;
+      }
+
+      .about-grid,
+      .green-grid,
+      .network-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .esg-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 32px, 1200px);
+      }
+
+      .nav {
+        height: 64px;
+      }
+
+      .logo {
+        width: 94px;
+      }
+
+      .hero-content {
+        padding-top: 64px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .stats,
+      .business-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .business-card,
+      .business-card img {
+        min-height: 300px;
+      }
+
+      .milestone {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="주요 메뉴">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="#top" aria-label="POSCO 홈">
+          <img class="logo" src="stitch_functional_web_design/posco_logo/screen.png" alt="POSCO">
+        </a>
+        <div class="menu">
+          <a class="active" href="#about">About</a>
+          <a href="#business">Business</a>
+          <a href="#green">Green Future</a>
+          <a href="#esg">ESG</a>
+          <a href="#network">Network</a>
+          <a href="#history">History</a>
+        </div>
+      </div>
+      <div class="nav-actions" aria-label="보조 메뉴">
+        <button class="icon-btn" type="button" title="언어 선택">文</button>
+        <button class="icon-btn" type="button" title="검색">⌕</button>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="container hero-content">
+      <p class="eyebrow">Journey to a Green Future</p>
+      <h1>철강을 넘어,<br>지속가능한 미래를 만듭니다</h1>
+      <p>포스코는 저탄소 철강과 미래 소재 기술을 바탕으로 산업의 새로운 가능성을 열어갑니다.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="#business">사업 영역 보기</a>
+        <a class="btn secondary" href="#green">지속가능경영 보기</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About POSCO</p>
+          <h2>산업의 기반을 세우고, 미래의 가치를 확장합니다</h2>
+          <p class="lead">포스코는 세계적인 철강 경쟁력을 기반으로 친환경 생산 체계와 미래 소재 사업을 확장해온 글로벌 기업입니다. 철강, 이차전지 소재, 수소, 에너지, 인프라 등 다양한 영역에서 지속가능한 성장 기반을 만들어가고 있습니다.</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>1968</strong>
+            <span>포항종합제철 설립</span>
+          </div>
+          <div class="stat">
+            <strong>7</strong>
+            <span>핵심 성장 사업 방향</span>
+          </div>
+          <div class="stat">
+            <strong>2050</strong>
+            <span>탄소중립 로드맵</span>
+          </div>
+          <div class="stat">
+            <strong>Global</strong>
+            <span>산업 파트너 네트워크</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="business" class="section-alt">
+      <div class="container">
+        <div class="section-title center">
+          <p class="eyebrow">Our Business</p>
+          <h2>핵심 사업 포트폴리오</h2>
+          <p class="lead">철강 경쟁력을 중심으로 미래 모빌리티, 에너지 전환, 친환경 소재 산업을 연결합니다.</p>
+        </div>
+        <div class="business-grid">
+          <article class="business-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4R_eZ6XxO6UlWosPv7W3qml9nrymTr8dOW8rSYtydi_XabgEkUhkjbK7oYPgQOh1G8StMubUrvKs-jmoNkhTzQzl_yQkvugBHZYt8fkVkvvKC7FMP3euGDkKmsIp1WlFMcFzyN0BssG5-njXZ07QG00CPE3YGZY9ZsHcJlAbRrrmcvxRysFH-IZSrkxTsnitDA-LkXSSyn5JJ8XkpWLnwgY-o9EwiuzVJaWna8uxVK3NnfBTHhU63iu3yNOQk2U1CWD_jhgtPifNL" alt="고품질 철강 코일">
+            <div class="business-body">
+              <h3>철강</h3>
+              <p>자동차, 조선, 건설, 에너지 산업을 뒷받침하는 고품질 철강 제품</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEpKArTvFsnuEZihy0iWqSFCTrYmDZqLJJ1-9nDxbehqFfKEds5M3MKiHOvjz5Ix15T8g_Ehyba2Ehex5WWK7T2AoCQ4H2YlSpdQI1KQdVmRgtZg6Fojx3iqlM5jRZ6NFkPBivdNUWkPRxZTQvPN9J9gUq9ezfIBRO-H0EWno8Q7lC-mJcJlDuZi8OF7h4TGCX-OLSKM2hu4KflFqhNPKgdkhEamtDCrAHa1UgM0v6nceJ3Yb_tDGgY9NlWH80Zjl-gM83Yv6lt3Nh" alt="친환경 생산 시설">
+            <div class="business-body">
+              <h3>저탄소 철강</h3>
+              <p>탄소 배출을 줄이는 공정 전환과 친환경 철강 기술</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0vgBx3fh_tS5r0yffxn2lLqZjZ0WwtFzaLq2qNSuv-3yMWwgXPbjYeqnujEfcGphNLwTBh4G5ALQvDSjBp17JJ1MeHLQyr4q6avoYBRY5VSEI23HRhNuKOYF6_SFIQlQTYcHT-SpJNyxcee4-4gVfvLR3Tm58TqOluSPuRQhy7YhHL6AB5QrmABUG171WVobSQenXbDre-Y0RQzmbqx0HfYxJcKY4xstRUJc9jexIwqnSBcN1YHWF10CnYlfCD2csU_TPwQ0PpWZ1" alt="이차전지 소재">
+            <div class="business-body">
+              <h3>이차전지 소재</h3>
+              <p>리튬, 니켈, 양극재, 음극재로 이어지는 소재 밸류체인</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9kc9XfiLNyc2XMPYjdGeXS_mBZmEVMNLrpWkpdMGad4VYRUru8zqOCv-jP3bzzqaN8pWWsZXfLcekuXsvOK0Gxkf7tmClLdqjoFa19UrIrDxOY7dFI0mVXNr1hyaSW2j4wHiWIAabqZIBcKV3T0vgoIIs1CaOla-q8p2Fe3chO7pvoQeQCUQnfnnoi5tI-faGfNw1AaPpvlJrGPv49-PkpmTxMutCz-UErwIf9yzeN9zJCPBwv0Sc_5yM7sszdtDd5-eQGVh6CFC8" alt="수소 에너지 인프라">
+            <div class="business-body">
+              <h3>수소</h3>
+              <p>미래 에너지 전환을 위한 수소 생산 및 활용 기반</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwZNXtPDte8GyXkoffUomWSKcVdFHXGcqFZ43QrgF1I0BRVY9E9dMlZbDEUiyII77eyHV1aE-SLZZftrimtxq53--_4nhvNtm5l74om-2MfxOLtoecvf0eMerKd0T25D24b8rAFhhPYhERrxgbx4WDiAFZLFgKewTSzqUWITdZgEsoTlbpC_6JZmRVTanMApXACJ8Y1gFYzPHIs2Bi0b2rN-T71bAyzCf7y1NMzc9CQuT-0nyKgjDPdb8lDC26ZoKzwiRY_Qe1On-p" alt="산업 인프라">
+            <div class="business-body">
+              <h3>에너지ㆍ인프라</h3>
+              <p>친환경 에너지와 산업 인프라를 연결하는 그룹 시너지</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="green" class="section-dark">
+      <div class="container green-grid">
+        <div>
+          <p class="eyebrow">Green Transition</p>
+          <h2>HyREX와 저탄소 공정으로 녹색 전환을 앞당깁니다</h2>
+          <p class="lead">포스코는 제조 공정의 탄소 배출을 줄이고 친환경 소재 경쟁력을 높이며, 산업 전반의 녹색 전환을 앞당기고 있습니다.</p>
+        </div>
+        <div class="flow" aria-label="HyREX 공정 흐름">
+          <div class="flow-step">
+            <b>Step 01</b>
+            <p>재생에너지 기반의 그린 수소를 생산하고 안정적으로 공급합니다.</p>
+          </div>
+          <div class="flow-step">
+            <b>Step 02</b>
+            <p>수소환원제철 기술로 철광석을 환원해 탄소 배출을 줄입니다.</p>
+          </div>
+          <div class="flow-step">
+            <b>Step 03</b>
+            <p>자동차, 조선, 건설 산업에 필요한 고품질 저탄소 철강을 제공합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="esg">
+      <div class="container">
+        <div class="section-title center">
+          <p class="eyebrow">ESG & Corporate Citizenship</p>
+          <h2>기업시민 포스코</h2>
+          <p class="lead">비즈니스 파트너, 사회, 임직원과 함께 성장하는 지속가능한 생태계를 추구합니다.</p>
+        </div>
+        <div class="esg-grid">
+          <article class="card">
+            <h3>Business with POSCO</h3>
+            <p>고객과 공급사, 파트너와 함께 가치를 만들고 안정적인 산업 생태계를 조성합니다.</p>
+          </article>
+          <article class="card">
+            <h3>Society with POSCO</h3>
+            <p>지역사회와의 동행, 환경 보호 활동, 사회적 책임을 통해 더 나은 사회를 만듭니다.</p>
+          </article>
+          <article class="card">
+            <h3>People with POSCO</h3>
+            <p>구성원의 성장과 안전, 다양성을 존중하는 신뢰 기반의 조직문화를 지향합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="network" class="section-alt">
+      <div class="container network-grid">
+        <div>
+          <p class="eyebrow">Global Network</p>
+          <h2>세계로 확장되는 포스코의 산업 네트워크</h2>
+          <p class="lead">포스코는 다양한 산업 고객과 글로벌 파트너를 연결하며 안정적인 공급망과 기술 협력을 확대합니다.</p>
+          <div class="region"><span>Asia-Pacific</span><strong>주요 생산 거점</strong></div>
+          <div class="region"><span>Americas</span><strong>판매ㆍ가공 네트워크</strong></div>
+          <div class="region"><span>Europe</span><strong>고객 협력 거점</strong></div>
+        </div>
+        <div class="map">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuALX4a1EyHYLjWPTuj7HK1XqdgZEqCRWsEFexBjWflnWrZM56FUa-4DxvDpKXgmq2Uv_Vs0Ksffm8DSlomTMyRMm5lDdJFI9rY-JGBKQD9WIwupom11Acn7CqAlnr0UhuvlObZLwonvhZe-4iJ1-8ffmo-rKsziq89BQPXtskRr92xbvNnzUIloBCkbQrQueU_zM3QtSze3ndQB6dSG5yIJnu7HgvPatT-ROVcq6rosby6mcU1jZmgHdJCBEhp4x7c167sb4rZbeBQZ" alt="포스코 글로벌 네트워크 지도">
+          <div class="pin kr">PohangㆍGwangyang</div>
+          <div class="pin us">Americas</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="container">
+        <div class="section-title center">
+          <p class="eyebrow">History</p>
+          <h2>철강 그 이상을 향한 여정</h2>
+        </div>
+        <div class="timeline">
+          <article class="milestone">
+            <div class="year">1968</div>
+            <div>
+              <h3>포항종합제철 설립</h3>
+              <p>대한민국 기간산업 발전의 초석을 세우며 포스코의 역사가 시작되었습니다.</p>
+            </div>
+          </article>
+          <article class="milestone">
+            <div class="year">2000</div>
+            <div>
+              <h3>글로벌 철강 기업으로 도약</h3>
+              <p>기술력과 품질 경쟁력을 기반으로 세계 시장에서 영향력을 확대했습니다.</p>
+            </div>
+          </article>
+          <article class="milestone">
+            <div class="year">2022</div>
+            <div>
+              <h3>미래 성장 체계 강화</h3>
+              <p>지주회사 체제 전환을 통해 철강과 미래 소재, 친환경 에너지 사업의 균형 성장을 추진합니다.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <p class="eyebrow">With POSCO</p>
+        <h2>포스코와 함께 더 나은 미래를 설계하세요</h2>
+        <p class="lead">소재의 혁신과 산업의 전환을 함께 만들어갈 파트너를 기다립니다.</p>
+        <div class="btn-row" style="justify-content:center;">
+          <a class="btn secondary" href="#">제품 문의</a>
+          <a class="btn secondary" href="#">지속가능경영</a>
+          <a class="btn secondary" href="#">채용 정보</a>
+          <a class="btn secondary" href="#">뉴스룸</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <img class="logo" src="stitch_functional_web_design/posco_logo/screen.png" alt="POSCO">
+        <p>With POSCO, for a Better World.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Contact Us</a>
+        <a href="#">Site Map</a>
+        <a href="#">Legal Notice</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
